@@ -1,0 +1,52 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap" rel="stylesheet">
+
+<div class="container-fluid text-dark fs-5" id="body" style="height: 100vh; background-color: grey">
+    <!-- <div class="row">
+        <div class="col">
+    {#            <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Go Back</a>#} -->
+
+            <!-- {% if request.user.is_authenticated %}
+                <a href="{% url 'edit' photo.id %}" class="btn btn-dark my-3">{% trans 'Edit' %}</a>
+            {% endif %}
+        </div>
+        <div class="col">
+        </div>
+    </div> -->
+
+    <div class="row justify-content-around">
+        <div class="col-md-10">
+            <div style="position: relative; max-width: fit-content">
+                <img class="d-block img-fluid my-3" src="{{ (photo == null ? '' : photo.url) }}" alt="" 
+                     style="max-width: 100%; max-height: 90vh;" id="image" (load)="canvas_draw()">
+                    <p class="text-justify" id="description">{{ (photo == null ? '' : photo.description) }}</p>
+            </div>
+            <canvas id="canvas" style="display: none"></canvas>
+        </div>
+
+        <div class="col-md-auto my-3">
+            <div style="position: relative">
+                <button type="button" class="btn btn-dark" (click)="goBack()">Go Back</button>
+                <!-- {# TODO redesign button #} -->
+            </div>
+        </div>
+    <!-- {# TODO add info #} -->
+
+<!-- {#            <p class="text-justify">#}
+{#                {% if photo.camera_name != '' %}#}
+{#                    {% trans 'Camera' %}: {{ photo.camera_name }} <br>#}
+{#                {% endif %}#}
+{#                {% if photo.aperture != '' %}#}
+{#                    {% trans 'Aperture' %}: {{ photo.aperture }} <br>#}
+{#                {% endif %}#}
+{#                {% if photo.shutter_speed != '' %}#}
+{#                    {% trans 'Shutter speed' %}: {{ photo.shutter_speed }} <br>#}
+{#                {% endif %}#}
+{#                {% if photo.focal_length != '' %}#}
+{#                    {% trans 'Focal length' %}: {{ photo.focal_length }}{% trans 'mm' %}#}
+{#                {% endif %}#}
+{#            </p>#}
+{#        </div>#} -->
+    </div>
+</div>

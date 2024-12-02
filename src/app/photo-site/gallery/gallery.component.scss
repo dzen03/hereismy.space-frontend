@@ -1,0 +1,27 @@
+.cssload-speeding-wheel {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: cssload-spin 1000ms infinite linear;
+}
+
+@keyframes cssload-spin {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.list-group-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.masonry-item {
+  transition: top 0.4s ease-in-out, left 0.4s ease-in-out;
+}

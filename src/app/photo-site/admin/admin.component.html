@@ -1,0 +1,45 @@
+<div class="bg-light text-dark fs-5 container-fluid">
+    <div class="row justify-content-start">
+        <div class="col-md my-2">
+                <div >
+                    @for (photo of photoList; track photo.id) {
+                        <form (submit)="test(photo.id)" id="form{{photo.id}}" class="row">
+                            <input type="hidden" name="id" value="{{ photo.id }}">
+                            <div class="col-md-3">
+                                <div class="m-1">
+                                    <a routerLink="/photos/photo/{{ photo.id }}" title="{{ photo.id }}">
+                                    <img class="img-fluid items"
+                                        style="width: 100%"
+                                        src="{{ photo.url }}"
+                                        alt="{{ photo.description }}"
+                                        srcset="{{ photo.srcset.join(',') }}"
+                                        sizes="(min-width: 768px) 50vw,
+                                        100vw"
+                                        height="100"
+                                        width="100"
+                                        loading="lazy"/>
+
+                                        <!-- 768px from bootstrap col-md -->
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <textarea class="m-1" name="categories" value="{{ photo.categories }}" onload='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                            </div>
+                            <div class="col-md-4">
+                                <textarea class="m-1" name="description" value="{{ photo.description }}" onload='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="m-1" type="submit" class="btn btn-dark">Save</button>
+                            </div>
+                        </form>
+                    }
+                    @empty {
+                        <div class="my-4">
+                            <div class="cssload-speeding-wheel" style="height: 7rem; width: 7rem;"></div>
+                        </div>
+                    }
+                </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+#description {
+  max-height: 90vh; 
+  width: fit-content;
+  position: absolute;
+  z-index: 3;
+                    
+  left: 90%; 
+  top: 15%; 
+  color: white; 
+  text-align: left; 
+  font-size: 3dvw;
+                    
+  // inline-size: 20%; 
+  font-family: 'Roboto Slab', serif;
+  
+  backdrop-filter: brightness(70%);
+
+  background-color: rgb(255 255 255 / 50%);
+  border-radius: $btn-border-radius;
+}
